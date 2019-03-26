@@ -1,4 +1,4 @@
-namespace UnitCore.Common
+namespace UnityCore.Common
 {
 	public abstract class Singleton<T> where T : Singleton<T>, new()
 	{

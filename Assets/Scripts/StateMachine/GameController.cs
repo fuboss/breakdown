@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Breakdown;
 using UnityEngine;
 
 namespace StateMachines
@@ -39,7 +40,8 @@ namespace StateMachines
                 Debug.LogError("Game is already runs");
                 return;
             }
-
+            
+            GameManager.Instance.Data.SetLevel(level);
             StartState("GameStarts");
         }
 

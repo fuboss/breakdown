@@ -1,7 +1,6 @@
-using UnitCore.Common;
-using UnityEngine;
+using UnityCore.Common;
 
-namespace DefaultNamespace
+namespace UnityCore.Common
 {
 	public class CoroutineHelper : MonoSingleton<CoroutineHelper>
 	{

@@ -1,6 +1,6 @@
 using System;
 using System.Collections;
-using DefaultNamespace;
+using UnityCore.Common;
 using UnityCore.Extensions;
 using UnityEngine;
 

@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using Sirenix.OdinInspector;
 
-namespace UnitCore.Common
+namespace UnityCore.Common
 {
     public abstract class OdinMonoSingleton<T> : SerializedMonoBehaviour where T : OdinMonoSingleton<T>
     {
