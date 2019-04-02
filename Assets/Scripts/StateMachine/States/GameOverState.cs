@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Breakdown;
+using Breakdown.Sounds;
 using UnityEngine;
 
 namespace StateMachines
@@ -15,9 +16,9 @@ namespace StateMachines
 		
 		protected override IEnumerator InternalProcess()
 		{
-			
 			//handle the gameOver
 			Debug.Log("game over");
+			SoundManager.Instance.PlayGameOver();
 			UIManager.Instance.ShowGameOver();
 			yield break;
 		}

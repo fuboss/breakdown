@@ -13,8 +13,9 @@ namespace Breakdown
 		public PlayerController PlayerController;
 		
 		[ShowInInspector]
-		public GameData Data { get; set; }
-		
+		public GameData Data { get; set; } //session data
+
+		public int level = 0;
 		
 		private GameController _controller;
 
@@ -22,7 +23,7 @@ namespace Breakdown
 		{
 			Data = new GameData(Config);
 			_controller = new GameController(this);
-			_controller.StartGame(0);
+			_controller.StartGame(level);
 		}
 	}
 }

@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using Breakdown;
+using Breakdown.Sounds;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Game.Map
 {
+	//TODO: USE Pools!!!
 	public class Map : MonoBehaviour
 	{
 		[Required]
@@ -130,6 +132,7 @@ namespace Game.Map
 			GameManager.Instance.Data.ChangeLives(-1);
 			Destroy(crusher.gameObject);
 			//play sound
+			SoundManager.Instance.PlayLiveLoose();
 			//play fx
 		}
 
@@ -138,6 +141,7 @@ namespace Game.Map
 			GameManager.Instance.Data.ChangeScore(brick.Score);
 			Destroy(brick.gameObject);
 			//play sound
+			SoundManager.Instance.PlayBrickSound(brick.Tier);
 			//play fx
 		}
 	}

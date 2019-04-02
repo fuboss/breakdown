@@ -1,4 +1,5 @@
 using System;
+using Breakdown.Sounds;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -37,6 +38,11 @@ namespace Breakdown.Player
 			var desireX = Mathf.Lerp(viewPort.x, viewPort.x + input, _moveSpeed * Time.fixedDeltaTime);
 			Vector2 newPosition = _camera.ViewportToWorldPoint(new Vector3(Mathf.Clamp(desireX, ViewportOffset, 1 - ViewportOffset), viewPort.y));
 			_transform.position = newPosition;
+		}
+		
+		private void OnCollisionEnter(Collision other)
+		{
+			SoundManager.Instance.PlayPlayerHit();
 		}
 	}
 }
