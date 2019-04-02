@@ -20,7 +20,7 @@ namespace StateMachines
 			_gameManager.PlayerController.CanMove = false;
 			
 			//wait for User Input 
-			yield break;
+			yield return UIManager.Instance.WaitStartGame();
 		}
 	}
 }

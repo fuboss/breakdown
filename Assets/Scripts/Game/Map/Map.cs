@@ -97,7 +97,7 @@ namespace Game.Map
 			{
 				yield return null;
 
-				foreach (var obj in _destroyables)
+				foreach (var obj in _destroyables.ToArray())
 				{
 					if (!obj.IsDestroyed)
 						continue;

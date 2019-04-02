@@ -82,8 +82,10 @@ namespace StateMachines
 					StartState("GameRuns");
 					break;
 				case "GameRuns":
+					StartState("GameOver");
 					break;
 				case "GameOver":
+					StartState("GameStarts");
 					break;
 				default:
 					Debug.LogError("smth goes wrong");

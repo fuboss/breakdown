@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Breakdown;
+using UnityEngine;
 
 namespace StateMachines
 {
@@ -14,10 +15,11 @@ namespace StateMachines
 		
 		protected override IEnumerator InternalProcess()
 		{
+			
 			//handle the gameOver
-			throw new NotImplementedException();
+			Debug.Log("game over");
+			UIManager.Instance.ShowGameOver();
+			yield break;
 		}
-
-
 	}
 }
