@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using UnityCore.ReactiveProperties;
 
 namespace Breakdown
@@ -5,9 +6,10 @@ namespace Breakdown
 	public class GameData
 	{
 		private readonly GameConfig _config;
-		public ReactiveProperty<int> Lives { get; private set; }
-		public ReactiveProperty<int> Score { get; private set; }
-		public ReactiveProperty<int> Level { get; private set; }
+
+		public ReactiveProperty<int> Lives;
+		public ReactiveProperty<int> Score;
+		public ReactiveProperty<int> Level;
 
 		public GameData(GameConfig config)
 		{
@@ -19,8 +21,8 @@ namespace Breakdown
 		public void Reset()
 		{
 			Lives = new ReactiveProperty<int>(_config.defaultLives);
-			Score.Value = new ReactiveProperty<int>();
-			Level.Value = new ReactiveProperty<int>();
+			Score = new ReactiveProperty<int>();
+			Level = new ReactiveProperty<int>();
 		}
 
 		public void ChangeLives(int delta)

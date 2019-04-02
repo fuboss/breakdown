@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Breakdown;
 using UnityCore.Common;
 using UnityCore.Extensions;
 using UnityEngine;
@@ -8,12 +9,18 @@ namespace StateMachines
 {
 	public abstract class GameStateBase : IState
 	{
+		protected readonly GameManager _gameManager;
 		public abstract string Name { get; }
 		public bool IsActive { get; protected set; }
 		public event Action<IState> OnStateStart;
 		public event Action<IState> OnStateFinished;
         
 		private Coroutine _process;
+
+		protected GameStateBase(GameManager gameManager)
+		{
+			_gameManager = gameManager;
+		}
         
 		public void Activate()
 		{
