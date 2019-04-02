@@ -6,6 +6,7 @@ using UnityCore.Common;
 
 namespace Breakdown
 {
+	//basic game service locator
 	public sealed class GameManager : OdinMonoSingleton<GameManager>
 	{
 		public GameConfig Config;
