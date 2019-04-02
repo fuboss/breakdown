@@ -1,4 +1,5 @@
 using Breakdown.Player;
+using Game.Map;
 using Sirenix.OdinInspector;
 using StateMachines;
 using UnityCore.Common;
@@ -8,7 +9,7 @@ namespace Breakdown
 	public sealed class GameManager : OdinMonoSingleton<GameManager>
 	{
 		public GameConfig Config;
-		public MapController MapController;
+		public Map map;
 		public PlayerController PlayerController;
 		
 		[ShowInInspector]

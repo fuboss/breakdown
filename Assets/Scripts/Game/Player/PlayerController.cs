@@ -35,21 +35,8 @@ namespace Breakdown.Player
 
 			var viewPort = _camera.WorldToViewportPoint(_transform.position);
 			var desireX = Mathf.Lerp(viewPort.x, viewPort.x + input, _moveSpeed * Time.fixedDeltaTime);
-			var newPosition = _camera.ViewportToWorldPoint(new Vector3(Mathf.Clamp(desireX, ViewportOffset, 1 - ViewportOffset), viewPort.y));
-			newPosition.z = 0;
+			Vector2 newPosition = _camera.ViewportToWorldPoint(new Vector3(Mathf.Clamp(desireX, ViewportOffset, 1 - ViewportOffset), viewPort.y));
 			_transform.position = newPosition;
-			print($"viewport {viewPort.x}");
-//			var position = _transform.localPosition;
-//			var nextPosition = new Vector2(Mathf.Lerp(position.x, position.x + input, _moveSpeed * Time.fixedDeltaTime), position.y);
-//			var viewport = _camera.WorldToViewportPoint(nextPosition);
-//			//clamp 
-//			if (viewport.x >= _viewportOffset && viewport.x <= 1 - _viewportOffset)
-//			{
-//				_transform.localPosition = nextPosition;
-//			}
-//			else if(viewport.x <= _viewportOffset)
-//			
-//			print($"viewport {viewport.x}");
 		}
 	}
 }

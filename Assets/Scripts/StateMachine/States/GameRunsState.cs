@@ -14,11 +14,14 @@ namespace StateMachines
 
 		protected override IEnumerator InternalProcess()
 		{
+			yield return null;
 			//handle all the game logic
 			//build Map
+			_gameManager.map.BuildMap(_gameManager.Data.Level.Value);
 			//place player
 			_gameManager.PlayerController.CanMove = true;
 			//place a crusher
+			_gameManager.map.Crusher.CanMove = true;
 			
 			while (_gameManager.Data.Lives > 0)
 			{
